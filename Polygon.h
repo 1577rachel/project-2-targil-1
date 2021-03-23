@@ -11,6 +11,6 @@ public:
 	Polygon(const Polygon& pp); //copy coonstuctor
 	~Polygon(); //dtor
 	void addPoint(int index,int x,int y);  //function gets point and index and adds point to the array
-	float circumference(const Polygon& polygon); //calculates the circumference of the polygon
+	float circumference(); //calculates the circumference of the polygon
 };
 
