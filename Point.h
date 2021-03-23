@@ -12,8 +12,8 @@ public:
 	//get functions
 	float getx();
 	float gety();
-	float distance(Point p1, Point p2);  //the function gets 2 points and callculatets the distance between them 
-	~Point();
+	float distance(Point p1);  //the function gets 2 points and callculatets the distance between them 
+	//~Point();
 
 
 
