@@ -9,13 +9,15 @@ void main()
 	int sides;
 	cout << "enter number of sides:" << endl;
 	cin >> sides;  //...side+1 is the number of vertex's
-	while (sides <= 0)
+	while (sides <= 0){
 		cout << "ERROR" << endl;
-	Polygon polygon1(sides+1);  //sending numbers to the constructor
+		cin >> sides;
+	}
+	Polygon polygon1(sides);  //sending numbers to the constructor
 	cout << "enter the point values:" << endl;
 	char tav;
 	int x, y; //(x,y)
-	for (int i = 0; i < sides + 1; i++)  //num of vertex's times 
+	for (int i = 0; i < sides; i++)  //num of vertex's times 
 	{
 		cin >> tav;//input: (
 		cin >> x;
@@ -26,13 +28,15 @@ void main()
 	}
 	cout << "enter number of sides:" << endl;
 	cin >> sides;  //...side+1 is the number of vertex's
-	while (sides <= 0)
+	while (sides <= 0){
 		cout << "ERROR" << endl;
-	Polygon polygon2(sides + 1);  //sending numbers to the constructor
+		cin >> sides;
+	}
+	Polygon polygon2(sides);  //sending numbers to the constructor
 	cout << "enter the point values:" << endl;
 	char tav;
 	int x, y; //(x,y)
-	for (int i = 0; i < sides + 1; i++)  //num of vertex's times 
+	for (int i = 0; i < sides; i++)  //num of vertex's times 
 	{
 		cin >> tav;//input: (
 		cin >> x;
