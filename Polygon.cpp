@@ -46,7 +46,7 @@ void Polygon::addPoint(int index, int x,int y)
 
 float Polygon::circumference()
 {
-	Point call;  //for calling the function from class point
+	//Point call;  //for calling the function from class point
 	Point* pointer_f = array; //pointer to the first point in the arry
 	Point* pointer1 = array;  //this pointer will carry the first point for the distamce calculation                
 	Point* pointer2 = array;
@@ -55,11 +55,11 @@ float Polygon::circumference()
 	for (int i = 0; i < num; i++)  //calculating every 2 points in the arry
 	{
 		
-		sum += call.distance(*pointer1, *pointer2);
+		sum += (*pointer1).distance(*pointer2);
 		pointer1++;
 		pointer2++;
 
 	}
-	sum += distance(*pointer_f, *pointer2);  //last  index and first index
+	sum += (*pointer_f).distance(*pointer2);  //last  index and first index
 	return sum;
 }
