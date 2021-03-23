@@ -7,10 +7,10 @@ class Polygon
 public:
 	
 	Polygon(int numbers);  //constructor
-	Polygon();		  //defult constructor
+	//Polygon();		  //defult constructor
 	Polygon(const Polygon& pp); //copy coonstuctor
 	~Polygon(); //dtor
-	void addPoint( int index,int x,int y);  //function gets point and index and adds point to the array
-	float circumference(Polygon polygon ); //calculates the circumference of the polygon
+	void addPoint(int index,int x,int y);  //function gets point and index and adds point to the array
+	float circumference(const Polygon& polygon); //calculates the circumference of the polygon
 };
 
