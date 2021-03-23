@@ -47,19 +47,19 @@ void Polygon::addPoint(int index, int x,int y)
 float Polygon::circumference()
 {
 	//Point call;  //for calling the function from class point
-	Point* pointer_f = array; //pointer to the first point in the arry
-	Point* pointer1 = array;  //this pointer will carry the first point for the distamce calculation                
-	Point* pointer2 = array;
+	//Point* pointer_f = array; //pointer to the first point in the arry
+	Point* pointer = array;  //this pointer will carry the first point for the distamce calculation                
+	//Point* pointer2 = array;
 	pointer2++;   //this pointer will carry the second point for the distamce calculation
 	float sum = 0; //the summery of the circumference
-	for (int i = 0; i < num; i++)  //calculating every 2 points in the arry
+	for (int i = 0; i < num - 1; i++)  //calculating every 2 points in the arry
 	{
 		
-		sum += (*pointer1).distance(*pointer2);
-		pointer1++;
-		pointer2++;
+		sum += *(pointer1 + i).distance(*(pointer1 + i + 1));
+		//pointer1++;
+		//pointer2++;
 
 	}
-	sum += (*pointer_f).distance(*pointer2);  //last  index and first index
+	sum += (*(pointer1)).distance(*(pointer1 + num - 1));  //last  index and first index
 	return sum;
 }
