@@ -1,9 +1,17 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include "Point.h"
 #include "Polygon.h"
 #include <iostream>
 using namespace std;
 
-void main()
+int main()
 {
 
 	int sides;
@@ -34,8 +42,7 @@ void main()
 	}
 	Polygon polygon2(sides);  //sending numbers to the constructor
 	cout << "enter the point values:" << endl;
-	char tav;
-	int x, y; //(x,y)
+	//int x, y; //(x,y)
 	for (int i = 0; i < sides; i++)  //num of vertex's times 
 	{
 		cin >> tav;//input: (
@@ -45,23 +52,14 @@ void main()
 		cin >> tav; //input: )
 		polygon2.addPoint(i, x, y); //inputing a new point into the array
 	}
-	float perimeter1 = polygon1.circumference(polygon1);
-	float perimeter2 = polygon2.circumference(polygon1);
-
+	float perimeter1 = polygon1.circumference();
+	float perimeter2 = polygon2.circumference();
 	if (perimeter1 == perimeter2)  //if they are equal
-	{
 		cout << "equal.perimeter:"<< perimeter1 << endl;
-	}
 	else    //if they are not equal
 	{
 		cout << "perimeter:" << perimeter1 << endl;
 		cout << "perimeter:" << perimeter2 << endl;
 	}
-
-
-
-
-
-
-	return;
+	return 0;
 }
