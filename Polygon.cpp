@@ -1,10 +1,11 @@
 #include "Polygon.h"
+#include"Point.h"
 #include <iostream>
 using namespace std;
 
-Polygon::Polygon(int numbers)
+Polygon::Polygon(int number)
 {
-	num = numbers;
+	num = number;
 	array = new Point[num]; //array of vertex`s
 	cout << "in constructor" << endl;
 }
@@ -44,22 +45,22 @@ void Polygon::addPoint(int index, int x,int y)
 	(*(array + index)).sety(y);
 }
 
-float Polygon::circumference()
+float Polygon::circumference() const
 {
 	//Point call;  //for calling the function from class point
 	//Point* pointer_f = array; //pointer to the first point in the arry
-	Point* pointer = array;  //this pointer will carry the first point for the distamce calculation                
+	Point* pointer1 = array;  //this pointer will carry the first point for the distamce calculation                
 	//Point* pointer2 = array;
-	pointer2++;   //this pointer will carry the second point for the distamce calculation
+	//pointer2++;   //this pointer will carry the second point for the distamce calculation
 	float sum = 0; //the summery of the circumference
 	for (int i = 0; i < num - 1; i++)  //calculating every 2 points in the arry
 	{
 		
-		sum += *(pointer1 + i).distance(*(pointer1 + i + 1));
+		sum += (*(pointer1 + i)).distance(*(pointer1 + i + 1));
 		//pointer1++;
 		//pointer2++;
 
 	}
-	sum += (*(pointer1)).distance(*(pointer1 + num - 1));  //last  index and first index
+	sum += (*pointer1).distance(*(pointer1 + num - 1));  //The distance between the last index and first index.
 	return sum;
 }
